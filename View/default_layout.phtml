@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?=MetaHelper::getTitle();?></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="menu">
+        <div class="test-block">
+<a href="/">Home</a>
+<a href="/books">Books</a>
+<a href="/contact-us">Contact</a>
+<a href="/news">News</a>
+<a href="/cart">Cart</a>
+<?php if (Session::has('user')) : ?>
+    <a href="/logout">Logout</a>
+<?php else : ?>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+<?php endif;?>
+        </div>
+    </div>
+
+    <div class="content">
+        <?=$content ?>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="footer">
+        All rights reserved &copy; <?=date('Y')?>
+    </div>
+</div>
+</body>
+</html>

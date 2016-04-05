@@ -1,0 +1,16 @@
+<h1>Books in cart</h1>
+
+<?php if (!$books) : ?>
+
+    Empty :(
+
+<?php else:?>
+
+    <?php foreach ($books as $book) : ?>
+        Title:  <?=$book['title']?><br>
+        Price:  <?=$book['price']?><br>
+        <a href="#">Remove from cart</a>
+        <hr>
+    <?php endforeach; ?>
+
+<?php endif;?>

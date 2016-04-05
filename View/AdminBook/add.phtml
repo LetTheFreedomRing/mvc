@@ -1,0 +1,19 @@
+<b><?=Session::getFlash()?></b>
+
+<form action="" method="post">
+    Title: <input type="text" name="title" value="<?=$form->title?>"> <br>
+    Price: <input type="text" name="price" value="<?=$form->price?>"> <br>
+    Description:
+    <textarea name="description"><?=$form->description?></textarea> <br>
+    Style:
+
+
+    <select name="style" size="1">
+        <option>Select a style</option>
+        <?php foreach ($styles as $style) : ?>
+            <option  value="<?=$style['id']?>"><?=$style['name']?></option>
+        <?php endforeach; ?>
+    </select>
+    Active: <input type="checkbox" name="status" <?=$form->status ? 'checked' : '' ?>> <br>
+    <button>Go</button>
+</form>

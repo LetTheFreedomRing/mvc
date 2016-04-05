@@ -1,0 +1,10 @@
+<h1>Registration</h1>
+
+<b><?=Session::getFlash()?></b>
+
+<form method="post">
+    Your email: <input type="text" name="email" value="<?=$form->email ?>"> <br>
+    Your pass: <input type="password" name="password"> <br>
+    Repeat pass: <input type="password" name="repeat_password">
+    <button>Register</button>
+</form>

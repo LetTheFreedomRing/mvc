@@ -1,0 +1,10 @@
+<?php
+$count = 1;
+?>
+
+<h2><?=$author?></h2>
+
+Books:<br><?php foreach ($books as $book) :?>
+        <?php echo $count;
+            $count =$count + 1;?>. <?=$book?><br>
+        <?php endforeach; ?>

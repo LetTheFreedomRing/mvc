@@ -1,0 +1,12 @@
+<h1>Books</h1>
+
+<div class="books">
+    <?php foreach ($books as $book) : ?>
+        <div class="book-item">
+            Title:  <?=$book['title']?><br>
+            Price:  <?=$book['price']?><br>
+            <img src="<?=$book['image']?>" alt=""><br>
+            <a href="/book-<?=$book['id']?>.html">Details</a>
+        </div>
+    <?php endforeach; ?>
+</div>

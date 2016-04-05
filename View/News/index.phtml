@@ -1,0 +1,5 @@
+<h2>News</h2>
+
+<?php foreach ($news as $new) : ?>
+    <a href="/news-<?=$new['id']?>.html"><b><?=$new['title']?></b></a><br>
+<?php endforeach;?>

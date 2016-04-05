@@ -1,0 +1,29 @@
+<h1>Books table</h1>
+
+<table border="1" cellspacing="0" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Active</th>
+        <th>Actions</th>
+    </tr>
+    <b><?=Session::getFlash()?></b>
+    <?php foreach ($books as $book) : ?>
+        <tr>
+            <td><?=$book['id']?></td>
+            <td><?=$book['title']?></td>
+            <td><?=$book['price']?></td>
+            <td><?=$book['status']?></td>
+            <td>
+                <a href="/admin/books/edit/<?=$book['id']?>">Edit</a>
+                <a onclick="return confirm('Are you sure?')" href="/admin/books/remove/<?=$book['id']?>">Remove</a>
+                <a href="/admin/books/activate/<?=$book['id']?>">Activate</a>/
+                <a href="/admin/books/deactivate/<?=$book['id']?>">Deactivate</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+
+</table>
+
+

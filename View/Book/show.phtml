@@ -1,0 +1,9 @@
+<h2><?=$book['title']?></h2>
+
+
+Title:  <?=$book['title']?><br>
+Price:  <?=$book['price']?><br>
+Author: <?php foreach ($authors as $author) : ?>
+            <a href="/author-<?=$author?>.html"><?=$author?></a>
+        <?php endforeach;?><br>
+<a href="/add/<?=$book['id']?>">Add to cart</a>
