@@ -1,29 +1,83 @@
-<h1>Books table</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<table border="1" cellspacing="0" cellpadding="10">
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Price</th>
-        <th>Active</th>
-        <th>Actions</th>
-    </tr>
-    <b><?=Session::getFlash()?></b>
-    <?php foreach ($books as $book) : ?>
-        <tr>
-            <td><?=$book['id']?></td>
-            <td><?=$book['title']?></td>
-            <td><?=$book['price']?></td>
-            <td><?=$book['status']?></td>
-            <td>
-                <a href="/admin/books/edit/<?=$book['id']?>">Edit</a>
-                <a onclick="return confirm('Are you sure?')" href="/admin/books/remove/<?=$book['id']?>">Remove</a>
-                <a href="/admin/books/activate/<?=$book['id']?>">Activate</a>/
-                <a href="/admin/books/deactivate/<?=$book['id']?>">Deactivate</a>
-            </td>
-        </tr>
-    <?php endforeach; ?>
+    <title>Books table</title>
 
-</table>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/admin_book_list/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/css/admin_book_list/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/admin_book_list/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+
+            <h2 class="sub-header">Books table</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Active</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <b><?=Session::getFlash()?></b>
+                    <?php foreach ($books as $book) : ?>
+                        <tr>
+                            <td><?=$book['id']?></td>
+                            <td><?=$book['title']?></td>
+                            <td><?=$book['price']?></td>
+                            <td><?=$book['status']?></td>
+                            <td>
+                                <a href="/admin/books/edit/<?=$book['id']?>">Edit</a>
+                                <a onclick="return confirm('Are you sure?')" href="/admin/books/remove/<?=$book['id']?>">Remove</a>
+                                <a href="/admin/books/activate/<?=$book['id']?>">Activate</a>/
+                                <a href="/admin/books/deactivate/<?=$book['id']?>">Deactivate</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/admin_book_list/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/js/admin_book_list/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
 
 
